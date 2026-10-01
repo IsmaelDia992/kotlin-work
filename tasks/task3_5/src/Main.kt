@@ -7,4 +7,10 @@ import kotlin.io.path.writeText
 
 fun main() {
     // Add your code here
+    //uses Path and writeText to write text to a file named test.txt
+    val filePath = Path("test.txt")
+    filePath.writeText("This is the text in test")
+    filePath.appendText("This is the overwrite")
+    val fileContents = filePath.readText()
+    println(fileContents)
 }
