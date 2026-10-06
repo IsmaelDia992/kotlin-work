@@ -2,10 +2,16 @@
 fun main(args: Array<String>){
 
 
-    val sides = args[0].toInt()
-    println(rollDie(sides))
-
-
+    val sides = args.getOrNull(0)?.toIntOrNull()
+    if (sides != null) {
+        println(rollDie(sides))
+    }
+    else if (args.isEmpty()){
+        rollDie()
+    }
+    else{
+        println("Error")
+    }
 
 
 }
