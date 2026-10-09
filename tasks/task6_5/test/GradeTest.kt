@@ -9,4 +9,44 @@ import io.kotest.matchers.shouldBe
 @Suppress("unused")
 class GradeTest : FreeSpec({
     // Write your tests in here
+    
+    //pass
+  
+        "Mark between 70 and 100 gives a distinction"{
+            assertSoftly{
+                withClue("Mark=70") { grade(70) shouldBe "Distinction"}
+                withClue("Mark=85") { grade(85) shouldBe "Distinction"}
+                withClue("Mark=100") { grade(100) shouldBe "Distinction"}
+            }   
+        }
+
+        "Mark between 40 and 69 gives a pass"{
+            assertSoftly{
+                withClue("Mark=69") { grade(60) shouldBe "Pass"}
+                withClue("Mark=55") { grade(55) shouldBe "Pass"}
+                withClue("Mark=40") { grade(40) shouldBe "Pass"}
+            }   
+        }
+
+        "Mark between 0 and 39 gives a fail"{
+            assertSoftly{
+                withClue("Mark=39") { grade(39) shouldBe "Fail"}
+                withClue("Mark=25") { grade(25) shouldBe "Fail"}
+                withClue("Mark=0") { grade(0) shouldBe "Fail"}
+            }   
+        }
+
+        "Mark below 0 gives ?"{
+            assertSoftly{
+                withClue("Mark=-1") { grade(-1) shouldBe "?"}
+            }   
+        }
+
+        "Mark above 100 gives ?"{
+            assertSoftly{
+                withClue("Mark=101") { grade(101) shouldBe "?"}
+            }   
+        }
+
+
 })

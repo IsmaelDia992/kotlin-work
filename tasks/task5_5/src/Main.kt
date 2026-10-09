@@ -11,6 +11,10 @@ fun main(args: Array<String>){
     val wordOne = args[0]
     val wordTwo = args[1]
 
-    println(anagrams(wordOne, wordTwo))
-
+    if (wordOne anagramOf wordTwo) {
+        println("$wordOne and $wordTwo are anagrams!")
+    } else {
+        println("$wordOne and $wordTwo are NOT anagrams!")
+    }
 }
+
