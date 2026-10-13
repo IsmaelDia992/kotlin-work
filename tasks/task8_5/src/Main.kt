@@ -2,4 +2,12 @@
 
 fun main() {
     // Add your testing code here
+
+    val stringOne = readln()
+
+    val vowelCount = stringOne.howMany {it.lowercase() in "aeiou"}
+
+    println(vowelCount)
+    
+
 }

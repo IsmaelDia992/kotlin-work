@@ -3,7 +3,7 @@
 fun main() {
     val numbers = listOf(1, 4, 7, 2, 9, 3, 8)
 
-    val result = numbers
+    val result = numbers.map { it * it * it * it * it * it * it * it * it}.toList()
 
     println(result)
 }
