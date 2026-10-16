@@ -1,0 +1,4 @@
+24
+twentyfive
+420
+thisisastring
